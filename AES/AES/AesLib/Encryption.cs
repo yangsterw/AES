@@ -42,36 +42,37 @@ namespace AES.AesLib
             return BuildString(step3XorResult);
         }
 
+        /* Step 4: Substitute bytes, shift-1-right */
         List<int> step4SubsResult = new List<int>();
-        List<int> step7XorResult = new List<int>();
-        List<int> step7XorResultCarriedOn = new List<int>();
-        int loopCounter = 0;
-        void LoopOneTime()
+        string ShiftOneRight()
         {
-            /* Step 4: Substitute bytes, shift-1-right */
-            if (loopCounter == 1)
-                step4SubsResult = lib.ShiftOneRight(step3XorResult);
-            else
-                step4SubsResult = lib.ShiftOneRight(step7XorResultCarriedOn);
-
-            string step4OutString = BuildString(step4SubsResult);
-
-            /* Step 5: Shift rows */
-            List<int> step5ShiftResult = lib.ShiftRowsSingleRound(step4SubsResult);
-            string step5OutString = BuildString(step5ShiftResult);
-
-            /* Step 6: Shift columns */
-            List<int> step6ShiftResult = lib.MixColumnVerticallyOneRound(step5ShiftResult);
-            string step6OutString = BuildString(step6ShiftResult);
-
-            /* Step 7: XOR Step6Result with PermutatedKey */
-            step7XorResult = lib.ExorEvaluation(step6ShiftResult, step2PermutateResult);
-            step7XorResultCarriedOn = step7XorResult;
-
-            /* Step 8: Looping when prompt by user */
-            loopCounter++;
+            step4SubsResult = lib.ShiftOneRight(step3XorResult);
+            return BuildString(step4SubsResult);
         }
 
+        /* Step 5: Shift rows */
+        List<int> step5ShiftResult = new List<int>();
+        string ShiftingRowsToLeft()
+        {
+            step5ShiftResult = lib.ShiftRowsSingleRound(step4SubsResult);
+            return BuildString(step5ShiftResult);
+        }
+        
+        /* Step 6: Shift columns */
+        List<int> step6ShiftResult = new List<int>();
+        string MixColumnVerticallyDown()
+        {
+            step6ShiftResult = lib.MixColumnVerticallyOneRound(step5ShiftResult);
+            return BuildString(step6ShiftResult);
+        }
+
+        /* Step 7: XOR Step6Result with PermutatedKey */
+        List<int> step7XorResult = new List<int>();
+        void XorWithPermutatedKey()
+        {
+            step7XorResult = lib.ExorEvaluation(step6ShiftResult, step2PermutateResult);
+        }
+                          
         string ShowEncryptedMessage()
         {
             return BuildString(step7XorResult);

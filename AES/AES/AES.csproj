@@ -116,6 +116,7 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="AesLib\Decryption.cs" />
     <Compile Include="AesLib\Encryption.cs" />
     <Compile Include="AesLib\LibrarySAES.cs" />
     <Compile Include="App.xaml.cs">
