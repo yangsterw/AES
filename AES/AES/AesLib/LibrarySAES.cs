@@ -6,6 +6,7 @@ namespace AES.AesLib
 {
     public class LibrarySAES
     {
+        /* Added Comment */
         public LibrarySAES() { }
 
         public List<int> ConvertStringOfNumbersToBinary(string inputText)
