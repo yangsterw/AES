@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using AES.AesLib;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -56,11 +57,12 @@ namespace AES
                     // XOR Plaintext + Key
                     XorTables();
                     AlignXorLetters();
+                    currPlainNumbers = currXorNums;
                     currStep++;
                     encodeBtn.Content = "Substitute the bytes (Shift 1 to the right)";
                     break;
                 case 2:
-                    //ShiftLettersOneOver();
+                    ShiftLettersOneOver();
                     AlignPlainLetters();
                     encodeBtn.Content = "Shift The Rows";
                     break;
@@ -71,23 +73,51 @@ namespace AES
             }
         }
 
-        private void SHiftLettersOneOver()
+        private void ShiftLettersOneOver()
         {
+            var newStr = MatrixToString(currPlainNumbers);
 
         }
+
+
 
         private void XorTables()
         {
             var currTextPos = 0;
-            for (var col = 0; col < 4; col++)
+            for (var row = 0; row < 4; row++)
             {
-                for (var row = 0; row < 4; row++)
+                for (var col = 0; col < 4; col++)
                 {
                     currXorNums[row, col] = (plainBinNums[currTextPos] - 48) ^ (keyBinNums[currTextPos] - 48) ;
                     currTextPos++;
                 }
             }
         }
+
+        private int[,] StringToMatrix(string inputString)
+        {
+            var currTextPos = 0;
+            int[,] convertedMatrix = new int[4, 4];
+            for (var row = 0; row < 4; row++)
+            {
+                for (var col = 0; col < 4; col++)
+                {
+                    convertedMatrix[row, col] = inputString[currTextPos];
+                    currTextPos++;
+                }
+            }
+
+            return convertedMatrix;
+        }
+
+        private string MatrixToString(int[,] matrix)
+        {
+            return string.Join(",", matrix.OfType<int>()
+                .Select((value, index) => new {value, index})
+                .GroupBy(x => x.index / matrix.GetLength(1))
+                .Select(x => $"{{{string.Join(",", x.Select(y => y.value))}}}"));
+        }
+
         private string Binary2Hex(string binary)
         {
             string hexVal = "";
@@ -107,9 +137,9 @@ namespace AES
 
         private void PopulateFourByFourPlain(int currTextPos)
         {
-            for (var col = 0; col < 4; col++)
+            for (var row = 0; row < 4; row++)
             {
-                for (var row = 0; row < 4; row++)
+                for (var col = 0; col < 4; col++)
                 {
                     currPlainNumbers[row, col] = plainBinNums[currTextPos] - 48;
                     currTextPos++;
@@ -119,9 +149,9 @@ namespace AES
 
         private void PopulateFourByFourKey(int currTextPos)
         {
-            for (var col = 0; col < 4; col++)
+            for (var row = 0; row < 4; row++)
             {
-                for (var row = 0; row < 4; row++)
+                for (var col = 0; col < 4; col++)
                 {
                     currKeyNumbers[row, col] = keyBinNums[currTextPos] - 48;
                     currTextPos++;
@@ -132,23 +162,23 @@ namespace AES
         {
             // 1st column
             OneByOne.Text = Convert.ToString(currPlainNumbers[0, 0]);
-            TwoByOne.Text = Convert.ToString(currPlainNumbers[1, 0]);
-            ThreeByOne.Text = Convert.ToString(currPlainNumbers[2, 0]);
-            FourByOne.Text = Convert.ToString(currPlainNumbers[3, 0]);
-            // 2nd column
             OneByTwo.Text = Convert.ToString(currPlainNumbers[0, 1]);
-            TwoByTwo.Text = Convert.ToString(currPlainNumbers[1, 1]);
-            ThreeByTwo.Text = Convert.ToString(currPlainNumbers[2, 1]);
-            FourByTwo.Text = Convert.ToString(currPlainNumbers[3, 1]);
-            // 3rd column
             OneByThree.Text = Convert.ToString(currPlainNumbers[0, 2]);
-            TwoByThree.Text = Convert.ToString(currPlainNumbers[1, 2]);
-            ThreeByThree.Text = Convert.ToString(currPlainNumbers[2, 2]);
-            FourByThree.Text = Convert.ToString(currPlainNumbers[3, 2]);
-            // 4th column
             OneByFour.Text = Convert.ToString(currPlainNumbers[0, 3]);
+            // 2nd column
+            TwoByOne.Text = Convert.ToString(currPlainNumbers[1, 0]);
+            TwoByTwo.Text = Convert.ToString(currPlainNumbers[1, 1]);
+            TwoByThree.Text = Convert.ToString(currPlainNumbers[1, 2]);
             TwoByFour.Text = Convert.ToString(currPlainNumbers[1, 3]);
+            // 3rd column
+            ThreeByOne.Text = Convert.ToString(currPlainNumbers[2, 0]);
+            ThreeByTwo.Text = Convert.ToString(currPlainNumbers[2, 1]);
+            ThreeByThree.Text = Convert.ToString(currPlainNumbers[2, 2]);
             ThreeByFour.Text = Convert.ToString(currPlainNumbers[2, 3]);
+            // 4th column
+            FourByOne.Text = Convert.ToString(currPlainNumbers[3, 0]);
+            FourByTwo.Text = Convert.ToString(currPlainNumbers[3, 1]);
+            FourByThree.Text = Convert.ToString(currPlainNumbers[3, 2]);
             FourByFour.Text = Convert.ToString(currPlainNumbers[3, 3]);
         }
 
@@ -156,23 +186,23 @@ namespace AES
         {
             // 1st column
             OneByOne.Text = Convert.ToString(currXorNums[0, 0]);
-            TwoByOne.Text = Convert.ToString(currXorNums[1, 0]);
-            ThreeByOne.Text = Convert.ToString(currXorNums[2, 0]);
-            FourByOne.Text = Convert.ToString(currXorNums[3, 0]);
-            // 2nd column
             OneByTwo.Text = Convert.ToString(currXorNums[0, 1]);
-            TwoByTwo.Text = Convert.ToString(currXorNums[1, 1]);
-            ThreeByTwo.Text = Convert.ToString(currXorNums[2, 1]);
-            FourByTwo.Text = Convert.ToString(currXorNums[3, 1]);
-            // 3rd column
             OneByThree.Text = Convert.ToString(currXorNums[0, 2]);
-            TwoByThree.Text = Convert.ToString(currXorNums[1, 2]);
-            ThreeByThree.Text = Convert.ToString(currXorNums[2, 2]);
-            FourByThree.Text = Convert.ToString(currXorNums[3, 2]);
-            // 4th column
             OneByFour.Text = Convert.ToString(currXorNums[0, 3]);
+            // 2nd column
+            TwoByOne.Text = Convert.ToString(currXorNums[1, 0]);
+            TwoByTwo.Text = Convert.ToString(currXorNums[1, 1]);
+            TwoByThree.Text = Convert.ToString(currXorNums[1, 2]);
             TwoByFour.Text = Convert.ToString(currXorNums[1, 3]);
+            // 3rd column
+            ThreeByOne.Text = Convert.ToString(currXorNums[2, 0]);
+            ThreeByTwo.Text = Convert.ToString(currXorNums[2, 1]);
+            ThreeByThree.Text = Convert.ToString(currXorNums[2, 2]);
             ThreeByFour.Text = Convert.ToString(currXorNums[2, 3]);
+            // 4th column
+            FourByOne.Text = Convert.ToString(currXorNums[3, 0]);
+            FourByTwo.Text = Convert.ToString(currXorNums[3, 1]);
+            FourByThree.Text = Convert.ToString(currXorNums[3, 2]);
             FourByFour.Text = Convert.ToString(currXorNums[3, 3]);
         }
 
@@ -180,23 +210,23 @@ namespace AES
         {
             // 1st column
             OneByOneK.Text = Convert.ToString(currKeyNumbers[0, 0]);
-            TwoByOneK.Text = Convert.ToString(currKeyNumbers[1, 0]);
-            ThreeByOneK.Text = Convert.ToString(currKeyNumbers[2, 0]);
-            FourByOneK.Text = Convert.ToString(currKeyNumbers[3, 0]);
-            // 2nd column
             OneByTwoK.Text = Convert.ToString(currKeyNumbers[0, 1]);
-            TwoByTwoK.Text = Convert.ToString(currKeyNumbers[1, 1]);
-            ThreeByTwoK.Text = Convert.ToString(currKeyNumbers[2, 1]);
-            FourByTwoK.Text = Convert.ToString(currKeyNumbers[3, 1]);
-            // 3rd column
             OneByThreeK.Text = Convert.ToString(currKeyNumbers[0, 2]);
-            TwoByThreeK.Text = Convert.ToString(currKeyNumbers[1, 2]);
-            ThreeByThreeK.Text = Convert.ToString(currKeyNumbers[2, 2]);
-            FourByThreeK.Text = Convert.ToString(currKeyNumbers[3, 2]);
-            // 4th column
             OneByFourK.Text = Convert.ToString(currKeyNumbers[0, 3]);
+            // 2nd column
+            TwoByOneK.Text = Convert.ToString(currKeyNumbers[1, 0]);
+            TwoByTwoK.Text = Convert.ToString(currKeyNumbers[1, 1]);
+            TwoByThreeK.Text = Convert.ToString(currKeyNumbers[1, 2]);
             TwoByFourK.Text = Convert.ToString(currKeyNumbers[1, 3]);
+            // 3rd column
+            ThreeByOneK.Text = Convert.ToString(currKeyNumbers[2, 0]);
+            ThreeByTwoK.Text = Convert.ToString(currKeyNumbers[2, 1]);
+            ThreeByThreeK.Text = Convert.ToString(currKeyNumbers[2, 2]);
             ThreeByFourK.Text = Convert.ToString(currKeyNumbers[2, 3]);
+            // 4th column
+            FourByOneK.Text = Convert.ToString(currKeyNumbers[3, 0]);
+            FourByTwoK.Text = Convert.ToString(currKeyNumbers[3, 1]);
+            FourByThreeK.Text = Convert.ToString(currKeyNumbers[3, 2]);
             FourByFourK.Text = Convert.ToString(currKeyNumbers[3, 3]);
         }
     }
