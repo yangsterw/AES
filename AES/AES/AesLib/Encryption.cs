@@ -12,71 +12,91 @@ namespace AES.AesLib
         public Encryption() { }
 
         /* Step 1: Convert numerical to binary */
-        List<int> originalMsg = new List<int>();
-        List<int> originalKey = new List<int>();
         string ConvertMessageToBinaryOnEncryption(string message)
         {
-            originalMsg = lib.ConvertStringOfNumbersToBinary(message);
+            List<int> originalMsg = lib.ConvertStringOfNumbersToBinary(message);
             return BuildString(originalMsg);
         }
 
         string ConvertKeyToBinaryOnEncryption(string key)
         {
-            originalKey = lib.ConvertStringOfNumbersToBinary(key);
+            List<int> originalKey = lib.ConvertStringOfNumbersToBinary(key);
             return BuildString(originalKey);
         }
 
-        /* Step 2: Permutation */
-        List<int> step2PermutateResult = new List<int>();
-        string PermutateKeyOnEncryption()
+        /* Step 2: Permutation */        
+        string PermutateKeyOnEncryption(string inputString)   
         {
-            step2PermutateResult = lib.PermutationOne(originalKey);
+            List<int> originalKey = new List<int>();
+            foreach (var x in inputString)
+                originalKey.Add(inputString[x]);
+
+            List<int> step2PermutateResult = lib.PermutationOne(originalKey);
             return BuildString(step2PermutateResult);
         }
 
         /* Step 3: XOR the original message with the key */
-        List<int> step3XorResult = new List<int>();
-        string XorEvaluationOnEncryption()
+        string XorEvaluationOnEncryption(string inputString, string keyString)
         {
-            step3XorResult = lib.ExorEvaluation(originalMsg, originalKey);
+            List<int> originalMsg = new List<int>();
+            foreach (var x in inputString)
+                originalMsg.Add(inputString[x]);
+
+            List<int> originalKey = new List<int>();
+            foreach (var x in keyString)
+                originalKey.Add(keyString[x]);
+
+            List<int> step3XorResult = lib.ExorEvaluation(originalMsg, originalKey);
             return BuildString(step3XorResult);
         }
 
         /* Step 4: Substitute bytes, shift-1-right */
-        List<int> step4SubsResult = new List<int>();
-        string ShiftOneRightOnEncryption()
+        string ShiftOneRightOnEncryption(string inputString)
         {
-            step4SubsResult = lib.ShiftOneRight(step3XorResult);
+            List<int> step3XorResult = new List<int>();
+            foreach (var x in inputString)
+                step3XorResult.Add(inputString[x]);
+
+            List<int> step4SubsResult = lib.ShiftOneRight(step3XorResult);
             return BuildString(step4SubsResult);
         }
 
         /* Step 5: Shift rows */
-        List<int> step5ShiftResult = new List<int>();
-        string ShiftingRowsToLeftOnEncryption()
+        string ShiftingRowsToLeftOnEncryption(string inputString)
         {
-            step5ShiftResult = lib.ShiftRowsSingleRound(step4SubsResult);
+            List<int> step4SubsResult = new List<int>();
+            foreach (var x in inputString)
+                step4SubsResult.Add(inputString[x]);
+
+            List<int> step5ShiftResult = lib.ShiftRowsSingleRound(step4SubsResult);
             return BuildString(step5ShiftResult);
         }
         
         /* Step 6: Shift columns */
-        List<int> step6ShiftResult = new List<int>();
-        string MixColumnVerticallyDownOnEncryption()
+        string MixColumnVerticallyDownOnEncryption(string inputString)
         {
-            step6ShiftResult = lib.MixColumnVerticallyOneRound(step5ShiftResult);
+            List<int> step5ShiftResult = new List<int>();
+            foreach (var x in inputString)
+                step5ShiftResult.Add(inputString[x]);
+
+            List<int> step6ShiftResult = lib.MixColumnVerticallyOneRound(step5ShiftResult);
             return BuildString(step6ShiftResult);
         }
 
         /* Step 7: XOR Step6Result with PermutatedKey */
-        List<int> step7XorResult = new List<int>();
-        void XorWithPermutatedKeyOnEncryption()
+        string XorWithPermutatedKeyOnEncryption(string inputString, string keyString)
         {
-            step7XorResult = lib.ExorEvaluation(step6ShiftResult, step2PermutateResult);
-        }
-                          
-        string ShowEncryptedMessage()
-        {
+            List<int> step6ShiftResult = new List<int>();
+            foreach (var x in inputString)
+                step6ShiftResult.Add(inputString[x]);
+
+            List<int> step2PermutateResult = new List<int>();
+            foreach (var x in keyString)
+                step2PermutateResult.Add(inputString[x]);
+
+            List<int> step7XorResult = lib.ExorEvaluation(step6ShiftResult, step2PermutateResult);
             return BuildString(step7XorResult);
-        }
+        }          
 
         string BuildString(List<int> inputList)
         {
@@ -86,5 +106,29 @@ namespace AES.AesLib
 
             return builder.ToString();
         }
+
+        string Convert2DMatrixToString(int[,] inputMatrix)
+        {
+            StringBuilder builder = new StringBuilder();
+            for(int i = 0; i < 16; i++) {
+                for(int j = 0; j < 16; j++) {
+                    builder.Append(inputMatrix[i,j]);
+                }
+            }
+            return builder.ToString();
+        }
+        
+        int[,] ConvertStringTo2DMatirx(string inputString)
+        {
+            int[,] outputMatrix = new int[4,4];
+            StringBuilder builder = new StringBuilder();
+            for (int i = 0; i < 16; i++) {
+                for (int j = 0; j < 16; j++) {
+                    outputMatrix[i, j] = inputString[i];
+                }
+            }
+            return outputMatrix;
+        }
+
     }
 }
