@@ -14,13 +14,13 @@ namespace AES.AesLib
         /* Step 1: Convert numerical to binary */
         List<int> originalMsg = new List<int>();
         List<int> originalKey = new List<int>();
-        string ConvertMessageToBinaryClick(string message)
+        string ConvertMessageToBinaryOnEncryption(string message)
         {
             originalMsg = lib.ConvertStringOfNumbersToBinary(message);
             return BuildString(originalMsg);
         }
 
-        string ConvertKeyToBinary(string key)
+        string ConvertKeyToBinaryOnEncryption(string key)
         {
             originalKey = lib.ConvertStringOfNumbersToBinary(key);
             return BuildString(originalKey);
@@ -28,7 +28,7 @@ namespace AES.AesLib
 
         /* Step 2: Permutation */
         List<int> step2PermutateResult = new List<int>();
-        string PermutateKey()
+        string PermutateKeyOnEncryption()
         {
             step2PermutateResult = lib.PermutationOne(originalKey);
             return BuildString(step2PermutateResult);
@@ -36,7 +36,7 @@ namespace AES.AesLib
 
         /* Step 3: XOR the original message with the key */
         List<int> step3XorResult = new List<int>();
-        string XorEvaluation()
+        string XorEvaluationOnEncryption()
         {
             step3XorResult = lib.ExorEvaluation(originalMsg, originalKey);
             return BuildString(step3XorResult);
@@ -44,7 +44,7 @@ namespace AES.AesLib
 
         /* Step 4: Substitute bytes, shift-1-right */
         List<int> step4SubsResult = new List<int>();
-        string ShiftOneRight()
+        string ShiftOneRightOnEncryption()
         {
             step4SubsResult = lib.ShiftOneRight(step3XorResult);
             return BuildString(step4SubsResult);
@@ -52,7 +52,7 @@ namespace AES.AesLib
 
         /* Step 5: Shift rows */
         List<int> step5ShiftResult = new List<int>();
-        string ShiftingRowsToLeft()
+        string ShiftingRowsToLeftOnEncryption()
         {
             step5ShiftResult = lib.ShiftRowsSingleRound(step4SubsResult);
             return BuildString(step5ShiftResult);
@@ -60,7 +60,7 @@ namespace AES.AesLib
         
         /* Step 6: Shift columns */
         List<int> step6ShiftResult = new List<int>();
-        string MixColumnVerticallyDown()
+        string MixColumnVerticallyDownOnEncryption()
         {
             step6ShiftResult = lib.MixColumnVerticallyOneRound(step5ShiftResult);
             return BuildString(step6ShiftResult);
@@ -68,7 +68,7 @@ namespace AES.AesLib
 
         /* Step 7: XOR Step6Result with PermutatedKey */
         List<int> step7XorResult = new List<int>();
-        void XorWithPermutatedKey()
+        void XorWithPermutatedKeyOnEncryption()
         {
             step7XorResult = lib.ExorEvaluation(step6ShiftResult, step2PermutateResult);
         }
