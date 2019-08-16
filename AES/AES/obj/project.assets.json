@@ -27974,11 +27974,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\duper\\source\\repos\\AES\\AES\\AES.csproj",
+      "projectUniqueName": "C:\\Users\\duper\\Dropbox\\OIT\\Github\\AES\\AES\\AES\\AES.csproj",
       "projectName": "AES",
-      "projectPath": "C:\\Users\\duper\\source\\repos\\AES\\AES\\AES.csproj",
+      "projectPath": "C:\\Users\\duper\\Dropbox\\OIT\\Github\\AES\\AES\\AES\\AES.csproj",
       "packagesPath": "C:\\Users\\duper\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\duper\\source\\repos\\AES\\AES\\obj\\",
+      "outputPath": "C:\\Users\\duper\\Dropbox\\OIT\\Github\\AES\\AES\\AES\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
