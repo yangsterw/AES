@@ -26,6 +26,7 @@ namespace AES
 
         private int[,] currPlainNumbers = new int[4, 4];
         private int[,] currKeyNumbers = new int[4, 4];
+        private int[,] currXorNums = new int[4, 4];
         private string plainBinNums;
         private string keyBinNums;
         public MainPage()
@@ -41,18 +42,27 @@ namespace AES
             switch (currStep)
             {
                 case 0:
+                    // Setup the key + plaintext
                     plainBinNums = Hex2Binary(plainTextInput.Text);
                     keyBinNums = Hex2Binary(keyTextInput.Text);
                     PopulateFourByFourPlain(currTextPos);
                     PopulateFourByFourKey(currTextPos);
                     AlignPlainLetters();
                     AlignKeyLetters();
-                    //currStep++;
-                    encodeBtn.Content = "";
+                    currStep++;
+                    encodeBtn.Content = "XOR The PlainText and Key (Shows In Left Box)";
                     break;
                 case 1:
+                    // XOR Plaintext + Key
+                    XorTables();
+                    AlignXorLetters();
+                    currStep++;
+                    encodeBtn.Content = "Substitute the bytes (Shift 1 to the right)";
                     break;
                 case 2:
+                    //ShiftLettersOneOver();
+                    AlignPlainLetters();
+                    encodeBtn.Content = "Shift The Rows";
                     break;
                 case 3:
                     break;
@@ -61,6 +71,23 @@ namespace AES
             }
         }
 
+        private void SHiftLettersOneOver()
+        {
+
+        }
+
+        private void XorTables()
+        {
+            var currTextPos = 0;
+            for (var col = 0; col < 4; col++)
+            {
+                for (var row = 0; row < 4; row++)
+                {
+                    currXorNums[row, col] = (plainBinNums[currTextPos] - 48) ^ (keyBinNums[currTextPos] - 48) ;
+                    currTextPos++;
+                }
+            }
+        }
         private string Binary2Hex(string binary)
         {
             string hexVal = "";
@@ -123,6 +150,30 @@ namespace AES
             TwoByFour.Text = Convert.ToString(currPlainNumbers[1, 3]);
             ThreeByFour.Text = Convert.ToString(currPlainNumbers[2, 3]);
             FourByFour.Text = Convert.ToString(currPlainNumbers[3, 3]);
+        }
+
+        private void AlignXorLetters()
+        {
+            // 1st column
+            OneByOne.Text = Convert.ToString(currXorNums[0, 0]);
+            TwoByOne.Text = Convert.ToString(currXorNums[1, 0]);
+            ThreeByOne.Text = Convert.ToString(currXorNums[2, 0]);
+            FourByOne.Text = Convert.ToString(currXorNums[3, 0]);
+            // 2nd column
+            OneByTwo.Text = Convert.ToString(currXorNums[0, 1]);
+            TwoByTwo.Text = Convert.ToString(currXorNums[1, 1]);
+            ThreeByTwo.Text = Convert.ToString(currXorNums[2, 1]);
+            FourByTwo.Text = Convert.ToString(currXorNums[3, 1]);
+            // 3rd column
+            OneByThree.Text = Convert.ToString(currXorNums[0, 2]);
+            TwoByThree.Text = Convert.ToString(currXorNums[1, 2]);
+            ThreeByThree.Text = Convert.ToString(currXorNums[2, 2]);
+            FourByThree.Text = Convert.ToString(currXorNums[3, 2]);
+            // 4th column
+            OneByFour.Text = Convert.ToString(currXorNums[0, 3]);
+            TwoByFour.Text = Convert.ToString(currXorNums[1, 3]);
+            ThreeByFour.Text = Convert.ToString(currXorNums[2, 3]);
+            FourByFour.Text = Convert.ToString(currXorNums[3, 3]);
         }
 
         private void AlignKeyLetters()
