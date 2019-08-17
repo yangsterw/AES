@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -52,6 +53,8 @@ namespace AES
             {
                 case 0:
                     // Setup the key + plaintext
+                    PlainTextRectBox.Stroke = new SolidColorBrush(Colors.Red);
+                    KeyRectBox.Stroke = new SolidColorBrush(Colors.Red);
                     plainBinNums = Hex2Binary(plainTextInput.Text);
                     keyBinNums = Hex2Binary(keyTextInput.Text);
                     PopulateFourByFourPlain(currTextPos);
@@ -62,6 +65,7 @@ namespace AES
                     encodeBtn.Content = "Create a permuted key of original key";
                     break;
                 case 1:
+                    PermRectBox.Stroke = new SolidColorBrush(Colors.Red);
                     var permedKey = Encryption.PermutateKeyOnEncryption(keyBinNums);
                     currPermutatedKeyNums = StringToMatrix(permedKey);
                     AlignPermLetters();
@@ -70,6 +74,8 @@ namespace AES
                     break;
                 case 2:
                     // XOR Plaintext + Key
+                    PermRectBox.Stroke = new SolidColorBrush(Colors.Aqua);
+                    xorLabel.Text = "⊕";
                     XorTables();
                     AlignXorLetters();
                     currPlainNumbers = currXorNums;
@@ -89,12 +95,17 @@ namespace AES
                     currStep++;
                     break;
                 case 5:
+                    PermRectBox.Stroke = new SolidColorBrush(Colors.Red);
+                    KeyRectBox.Stroke = new SolidColorBrush(Colors.Aqua);
                     MixColumns();
                     AlignPlainLetters();
                     encodeBtn.Content = "XOR with Permutated Key";
                     currStep++;
                     break;
                 case 6:
+                    KeyRectBox.Stroke = new SolidColorBrush(Colors.Aqua);
+                    PermRectBox.Stroke = new SolidColorBrush(Colors.Aqua);
+                    PlainTextRectBox.Stroke = new SolidColorBrush(Colors.Aqua);
                     XorWithPermutatedKey();
                     AlignPlainLetters();
                     currStep = 0;
@@ -320,17 +331,27 @@ namespace AES
             switch (currStep)
             {
                 case 0:
+                    KeyRectBox.Stroke = new SolidColorBrush(Colors.Aqua);
+                    PermRectBox.Stroke = new SolidColorBrush(Colors.Red);
+                    PlainTextRectBox.Stroke = new SolidColorBrush(Colors.Red);
                     StartDecrypt();
                     currStep++;
                     decodeBtn.Content = "XOR Permutated Key With Text";
                     break;
                 case 1:
+                    xorLabel.Text = "⊕";
+                    KeyRectBox.Stroke = new SolidColorBrush(Colors.Aqua);
+                    PermRectBox.Stroke = new SolidColorBrush(Colors.Red);
+                    PlainTextRectBox.Stroke = new SolidColorBrush(Colors.Red);
                     XorDecodeTable();
                     AlignPlainLetters();
                     currStep++;
                     decodeBtn.Content = "Now Re-Mix (Shift Up)";
                     break;
                 case 2:
+                    KeyRectBox.Stroke = new SolidColorBrush(Colors.Aqua);
+                    PermRectBox.Stroke = new SolidColorBrush(Colors.Aqua);
+                    PlainTextRectBox.Stroke = new SolidColorBrush(Colors.Red);
                     MixColumnUp();
                     AlignPlainLetters();
                     currStep++;
@@ -343,12 +364,18 @@ namespace AES
                     decodeBtn.Content = "Substitute Bytes (Shift 1 left)";
                     break;
                 case 4:
+                    KeyRectBox.Stroke = new SolidColorBrush(Colors.Red);
+                    PermRectBox.Stroke = new SolidColorBrush(Colors.Aqua);
+                    PlainTextRectBox.Stroke = new SolidColorBrush(Colors.Red);
                     DecodeSubstituteBytes();
                     AlignPlainLetters();
                     currStep++;
                     decodeBtn.Content = "XOR with Original Key";
                     break;
                 case 5:
+                    KeyRectBox.Stroke = new SolidColorBrush(Colors.Aqua);
+                    PermRectBox.Stroke = new SolidColorBrush(Colors.Aqua);
+                    PlainTextRectBox.Stroke = new SolidColorBrush(Colors.Aqua);
                     DecodeXorWithOrigKey();
                     currStep = 0;
                     AlignPlainLetters();
@@ -409,6 +436,10 @@ namespace AES
 
         private void ResetBtn_Click(object sender, RoutedEventArgs e)
         {
+            KeyRectBox.Stroke = new SolidColorBrush(Colors.Aqua);
+            PermRectBox.Stroke = new SolidColorBrush(Colors.Aqua);
+            PlainTextRectBox.Stroke = new SolidColorBrush(Colors.Aqua);
+
             currStep = 0;
             encodeBtn.Content = "Encrypt and Populate Matrixes In Binary Format";
             decodeBtn.Content = "Decrypt The Encrypted Text";

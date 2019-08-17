@@ -74,6 +74,9 @@
         <Button x:Name="resetBtn" Content="Reset" FontSize="32" Margin="183,597,0,0" VerticalAlignment="Top" Click="ResetBtn_Click"/>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Foreground="Red" Margin="32,10,0,0" Text="Advanced Phongcryption Standard 128Bit Encryption and Decryption" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" Height="48" Width="665" FontWeight="Bold"/>
         <Rectangle Name="PlainTextRectBox" HorizontalAlignment="Left" Height="187" Stroke="Aqua" FocusVisualPrimaryBrush="Black" Margin="80,219,0,0" VerticalAlignment="Top" Width="216" StrokeThickness="3" />
+        <Rectangle x:Name="KeyRectBox" HorizontalAlignment="Left" Height="187" Stroke="Aqua" FocusVisualPrimaryBrush="Black" Margin="546,223,0,0" VerticalAlignment="Top" Width="216" StrokeThickness="3" />
+        <Rectangle x:Name="PermRectBox" HorizontalAlignment="Left" Height="187" Stroke="Aqua" FocusVisualPrimaryBrush="Black" Margin="534,484,0,0" VerticalAlignment="Top" Width="216" StrokeThickness="3" />
+        <TextBlock x:Name="xorLabel" HorizontalAlignment="Left" Margin="388,270,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="64"/>
 
     </Grid>
 </Page>
