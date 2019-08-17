@@ -30,13 +30,21 @@
     <AppXManifest Include="C:\Users\duper\Dropbox\OIT\Github\AES\AES\AES\bin\x64\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+<<<<<<< HEAD
       <Modified>2019-08-17T14:31:03.463</Modified>
+=======
+      <Modified>2019-08-17T14:08:13.105</Modified>
+>>>>>>> a9f20e2fd4113bd24f3cea5cab89ae2ba1f2dab0
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\duper\Dropbox\OIT\Github\AES\AES\AES\bin\x64\Debug\AES.exe">
       <PackagePath>entrypoint\AES.exe</PackagePath>
+<<<<<<< HEAD
       <Modified>2019-08-17T14:31:02.044</Modified>
+=======
+      <Modified>2019-08-17T14:08:07.777</Modified>
+>>>>>>> a9f20e2fd4113bd24f3cea5cab89ae2ba1f2dab0
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\microsoft.csharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -542,11 +550,19 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\duper\Dropbox\OIT\Github\AES\AES\AES\bin\x64\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
+<<<<<<< HEAD
       <Modified>2019-08-17T14:31:01.613</Modified>
+=======
+      <Modified>2019-08-17T14:08:07.459</Modified>
+>>>>>>> a9f20e2fd4113bd24f3cea5cab89ae2ba1f2dab0
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\duper\Dropbox\OIT\Github\AES\AES\AES\bin\x64\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
+<<<<<<< HEAD
       <Modified>2019-08-17T14:31:01.613</Modified>
+=======
+      <Modified>2019-08-17T14:08:07.459</Modified>
+>>>>>>> a9f20e2fd4113bd24f3cea5cab89ae2ba1f2dab0
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.17763.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -554,11 +570,19 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\duper\Dropbox\OIT\Github\AES\AES\AES\bin\x64\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
+<<<<<<< HEAD
       <Modified>2019-08-16T22:11:49.846</Modified>
+=======
+      <Modified>2019-08-17T14:08:10.409</Modified>
+>>>>>>> a9f20e2fd4113bd24f3cea5cab89ae2ba1f2dab0
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\duper\Dropbox\OIT\Github\AES\AES\AES\bin\x64\Debug\Core\AES.exe">
       <PackagePath>AES.exe</PackagePath>
+<<<<<<< HEAD
       <Modified>2019-08-17T14:31:03.420</Modified>
+=======
+      <Modified>2019-08-17T14:08:13.080</Modified>
+>>>>>>> a9f20e2fd4113bd24f3cea5cab89ae2ba1f2dab0
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
