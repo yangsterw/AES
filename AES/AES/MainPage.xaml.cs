@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -38,8 +39,13 @@ namespace AES
 
         }
 
-        private void EncodeBtn_Click(object sender, RoutedEventArgs e)
+        private async void EncodeBtn_Click(object sender, RoutedEventArgs e)
         {
+            if (plainTextInput.Text == "" || plainTextInput.Text.Length > 4 && keyTextInput.Text.Length > 4 || keyTextInput.Text == "")
+            {
+                await new MessageDialog("Plain text and a key must be filled out, and no longer than 4 digits.", "Error").ShowAsync();
+                return;
+            }
             var currTextPos = 0;
             decodeBtn.IsEnabled = false;
             switch (currStep)
@@ -303,8 +309,14 @@ namespace AES
             FourByFourK.Text = Convert.ToString(currKeyNumbers[3, 3]);
         }
 
-        private void DecodeBtn_Click(object sender, RoutedEventArgs e)
+        private async void DecodeBtn_Click(object sender, RoutedEventArgs e)
         {
+            if (decryptTextInput.Text == "" || decryptTextInput.Text.Length > 4 && keyTextInput.Text.Length > 4 || keyTextInput.Text == "")
+            {
+                await new MessageDialog("Decrypt text and a key must be filled out, and no longer than 4 digits.", "Error").ShowAsync();
+                return;
+            }
+
             encodeBtn.IsEnabled = false;
 
             switch (currStep)
@@ -395,6 +407,84 @@ namespace AES
 
             currPermutatedKeyNums = StringToMatrix(permutatedBinNums);
             AlignPermLetters();
+        }
+
+        private void ResetBtn_Click(object sender, RoutedEventArgs e)
+        {
+            currStep = 0;
+            encodeBtn.Content = "Encrypt and Populate Matrixes In Binary Format";
+            decodeBtn.Content = "Decrypt The Encrypted Text";
+            encodeBtn.IsEnabled = true;
+            decodeBtn.IsEnabled = true;
+            plainTextInput.Text = "";
+            keyTextInput.Text = "";
+            decryptTextInput.Text = "";
+            encryptedResult.Text = "Empty";
+            decryptedResult.Text = "Empty";
+
+            // 1st column
+            OneByOnePK.Text = "X";
+            OneByTwoPK.Text = "X";
+            OneByThreePK.Text = "X";
+            OneByFourPK.Text = "X";
+            // 2nd column
+            TwoByOnePK.Text = "X";
+            TwoByTwoPK.Text = "X";
+            TwoByThreePK.Text = "X";
+            TwoByFourPK.Text = "X";
+            // 3rd column
+            ThreeByOnePK.Text = "X";
+            ThreeByTwoPK.Text = "X";
+            ThreeByThreePK.Text = "X";
+            ThreeByFourPK.Text = "X";
+            // 4th column
+            FourByOnePK.Text = "X";
+            FourByTwoPK.Text = "X";
+            FourByThreePK.Text = "X";
+            FourByFourPK.Text = "X";
+
+            // 1st column
+            OneByOneK.Text = "X";
+            OneByTwoK.Text = "X";
+            OneByThreeK.Text = "X";
+            OneByFourK.Text = "X";
+            // 2nd column
+            TwoByOneK.Text = "X";
+            TwoByTwoK.Text = "X";
+            TwoByThreeK.Text = "X";
+            TwoByFourK.Text = "X";
+            // 3rd column
+            ThreeByOneK.Text = "X";
+            ThreeByTwoK.Text = "X";
+            ThreeByThreeK.Text = "X";
+            ThreeByFourK.Text = "X";
+            // 4th column
+            FourByOneK.Text = "X";
+            FourByTwoK.Text = "X";
+            FourByThreeK.Text = "X";
+            FourByFourK.Text = "X";
+
+            // 1st column
+            OneByOne.Text = "X";
+            OneByTwo.Text = "X";
+            OneByThree.Text = "X";
+            OneByFour.Text = "X";
+            // 2nd column
+            TwoByOne.Text = "X";
+            TwoByTwo.Text = "X";
+            TwoByThree.Text = "X";
+            TwoByFour.Text = "X";
+            // 3rd column
+            ThreeByOne.Text = "X";
+            ThreeByTwo.Text = "X";
+            ThreeByThree.Text = "X";
+            ThreeByFour.Text = "X";
+            // 4th column
+            FourByOne.Text = "X";
+            FourByTwo.Text = "X";
+            FourByThree.Text = "X";
+            FourByFour.Text = "X";
+
         }
     }
 }
