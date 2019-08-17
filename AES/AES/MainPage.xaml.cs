@@ -126,9 +126,7 @@ namespace AES
             var newStr = Encryption.ShiftOneRightOnEncryption(MatrixToString(currPlainNumbers));
             currPlainNumbers = StringToMatrix(newStr);
         }
-
-
-
+               
         private void XorTables()
         {
             var currTextPos = 0;
