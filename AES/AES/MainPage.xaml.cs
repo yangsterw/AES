@@ -27,6 +27,7 @@ namespace AES
 
         private int[,] currPlainNumbers = new int[4, 4];
         private int[,] currKeyNumbers = new int[4, 4];
+        private int[,] currPermutatedKeyNums = new int[4, 4];
         private int[,] currXorNums = new int[4, 4];
         private string plainBinNums;
         private string keyBinNums;
@@ -51,9 +52,16 @@ namespace AES
                     AlignPlainLetters();
                     AlignKeyLetters();
                     currStep++;
-                    encodeBtn.Content = "XOR The PlainText and Key (Shows In Left Box)";
+                    encodeBtn.Content = "Create a permuted key of original key";
                     break;
                 case 1:
+                    var permedKey = Encryption.PermutateKeyOnEncryption(keyBinNums);
+                    currPermutatedKeyNums = StringToMatrix(permedKey);
+                    AlignPermLetters();
+                    encodeBtn.Content = "XOR The PlainText and Key (Shows In Left Box)";
+                    currStep++;
+                    break;
+                case 2:
                     // XOR Plaintext + Key
                     XorTables();
                     AlignXorLetters();
@@ -61,16 +69,49 @@ namespace AES
                     currStep++;
                     encodeBtn.Content = "Substitute the bytes (Shift 1 to the right)";
                     break;
-                case 2:
+                case 3:
                     ShiftLettersOneOver();
                     AlignPlainLetters();
                     encodeBtn.Content = "Shift The Rows";
-                    break;
-                case 3:
+                    currStep++;
                     break;
                 case 4:
+                    ShiftRows();
+                    AlignPlainLetters();
+                    encodeBtn.Content = "Mix Columns";
+                    currStep++;
+                    break;
+                case 5:
+                    MixColumns();
+                    AlignPlainLetters();
+                    encodeBtn.Content = "XOR with Permutated Key";
+                    currStep++;
+                    break;
+                case 6:
+                    XorWithPermutatedKey();
+                    AlignPlainLetters();
+                    currStep++;
                     break;
             }
+        }
+
+        private void XorWithPermutatedKey()
+        {
+            var xoredPlainTxt = Encryption.XorEvaluationOnEncryption(MatrixToString(currPlainNumbers),
+                MatrixToString(currPermutatedKeyNums));
+            currPlainNumbers = StringToMatrix(xoredPlainTxt);
+        }
+
+        private void MixColumns()
+        {
+            var newStr = Encryption.MixColumnVerticallyDownOnEncryption(MatrixToString(currPlainNumbers));
+            currPlainNumbers = StringToMatrix(newStr);
+        }
+
+        private void ShiftRows()
+        {
+            var newStr = Encryption.ShiftingRowsToLeftOnEncryption(MatrixToString(currPlainNumbers));
+            currPlainNumbers = StringToMatrix(newStr);
         }
 
         private void ShiftLettersOneOver()
@@ -158,6 +199,31 @@ namespace AES
                 }
             }
         }
+
+        private void AlignPermLetters()
+        {
+            // 1st column
+            OneByOnePK.Text = Convert.ToString(currPermutatedKeyNums[0, 0]);
+            OneByTwoPK.Text = Convert.ToString(currPermutatedKeyNums[0, 1]);
+            OneByThreePK.Text = Convert.ToString(currPermutatedKeyNums[0, 2]);
+            OneByFourPK.Text = Convert.ToString(currPermutatedKeyNums[0, 3]);
+            // 2nd column
+            TwoByOnePK.Text = Convert.ToString(currPermutatedKeyNums[1, 0]);
+            TwoByTwoPK.Text = Convert.ToString(currPermutatedKeyNums[1, 1]);
+            TwoByThreePK.Text = Convert.ToString(currPermutatedKeyNums[1, 2]);
+            TwoByFourPK.Text = Convert.ToString(currPermutatedKeyNums[1, 3]);
+            // 3rd column
+            ThreeByOnePK.Text = Convert.ToString(currPermutatedKeyNums[2, 0]);
+            ThreeByTwoPK.Text = Convert.ToString(currPermutatedKeyNums[2, 1]);
+            ThreeByThreePK.Text = Convert.ToString(currPermutatedKeyNums[2, 2]);
+            ThreeByFourPK.Text = Convert.ToString(currPermutatedKeyNums[2, 3]);
+            // 4th column
+            FourByOnePK.Text = Convert.ToString(currPermutatedKeyNums[3, 0]);
+            FourByTwoPK.Text = Convert.ToString(currPermutatedKeyNums[3, 1]);
+            FourByThreePK.Text = Convert.ToString(currPermutatedKeyNums[3, 2]);
+            FourByFourPK.Text = Convert.ToString(currPermutatedKeyNums[3, 3]);
+        }
+
         private void AlignPlainLetters()
         {
             // 1st column

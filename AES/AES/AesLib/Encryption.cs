@@ -25,7 +25,7 @@ namespace AES.AesLib
         }
 
         /* Step 2: Permutation */        
-        string PermutateKeyOnEncryption(string inputString)   
+        public static string PermutateKeyOnEncryption(string inputString)   
         {
             List<int> originalKey = new List<int>();
             foreach (var x in inputString)
@@ -36,7 +36,7 @@ namespace AES.AesLib
         }
 
         /* Step 3: XOR the original message with the key */
-        string XorEvaluationOnEncryption(string inputString, string keyString)
+        public static string XorEvaluationOnEncryption(string inputString, string keyString)
         {
             List<int> originalMsg = new List<int>();
             foreach (var x in inputString)
@@ -62,7 +62,7 @@ namespace AES.AesLib
         }
 
         /* Step 5: Shift rows */
-        string ShiftingRowsToLeftOnEncryption(string inputString)
+        public static string ShiftingRowsToLeftOnEncryption(string inputString)
         {
             List<int> step4SubsResult = new List<int>();
             foreach (var x in inputString)
@@ -73,7 +73,7 @@ namespace AES.AesLib
         }
         
         /* Step 6: Shift columns */
-        string MixColumnVerticallyDownOnEncryption(string inputString)
+        public static string MixColumnVerticallyDownOnEncryption(string inputString)
         {
             List<int> step5ShiftResult = new List<int>();
             foreach (var x in inputString)
