@@ -67,10 +67,11 @@
         <TextBox x:Name="decryptTextInput" HorizontalAlignment="Left" FontSize="26" Margin="812,53,0,0" Text="a355" TextWrapping="Wrap" VerticalAlignment="Top" Height="41" Width="166"/>
         <Button x:Name="decodeBtn" Content="Decrypt The Encrypted Text" Margin="521,119,0,0" VerticalAlignment="Top" Width="361" Click="DecodeBtn_Click" />
         <TextBlock x:Name="decryptLabel" HorizontalAlignment="Left" Margin="812,29,0,0" Text="Input 128bit AES encrypted text to decrypt:" TextWrapping="Wrap" VerticalAlignment="Top" Height="22" Width="366"  />
-        <TextBlock x:Name="encryptedResultLabel" HorizontalAlignment="Left" Margin="73,508,0,0" Text="CipherText:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="26" FontWeight="Bold"/>
-        <TextBlock x:Name="encryptedResult" HorizontalAlignment="Left" Margin="231,508,0,0" Text="Encrypted Result" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="26" FontWeight="Bold"/>
-        <TextBlock x:Name="decryptedResultLabel" HorizontalAlignment="Left" Margin="19,562,0,0" Text="Decrypted Text:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="26" FontWeight="Bold"/>
-        <TextBlock x:Name="decryptedResult" HorizontalAlignment="Left" Margin="230,563,0,0" Text="Decrypted Result" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="26" FontWeight="Bold"/>
+        <TextBlock x:Name="encryptedResultLabel" HorizontalAlignment="Left" Margin="67,442,0,0" Text="CipherText:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="26" FontWeight="Bold"/>
+        <TextBlock x:Name="encryptedResult" HorizontalAlignment="Left" Margin="225,442,0,0" Text="Empty" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="26" FontWeight="Bold"/>
+        <TextBlock x:Name="decryptedResultLabel" HorizontalAlignment="Left" Margin="13,496,0,0" Text="Decrypted Text:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="26" FontWeight="Bold"/>
+        <TextBlock x:Name="decryptedResult" HorizontalAlignment="Left" Margin="224,497,0,0" Text="Empty" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="26" FontWeight="Bold"/>
+        <Button x:Name="resetBtn" Content="Reset" FontSize="32" Margin="170,569,0,0" VerticalAlignment="Top" Click="ResetBtn_Click"/>
 
     </Grid>
 </Page>

@@ -30,13 +30,21 @@
     <AppXManifest Include="F:\SAES\AES\AES\bin\x64\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+<<<<<<< HEAD
       <Modified>2019-08-17T08:24:50.431</Modified>
+=======
+      <Modified>2019-08-17T06:38:52.072</Modified>
+>>>>>>> 1f57954d36853dbe49510baba73e90639898bd05
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="F:\SAES\AES\AES\bin\x64\Debug\AES.exe">
       <PackagePath>entrypoint\AES.exe</PackagePath>
+<<<<<<< HEAD
       <Modified>2019-08-17T08:24:49.376</Modified>
+=======
+      <Modified>2019-08-17T06:38:49.675</Modified>
+>>>>>>> 1f57954d36853dbe49510baba73e90639898bd05
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Yenny Wright\.nuget\packages\microsoft.csharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -538,15 +546,27 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\SAES\AES\AES\bin\x64\Debug\AES.xr.xml">
       <PackagePath>AES.xr.xml</PackagePath>
+<<<<<<< HEAD
       <Modified>2019-08-17T04:35:06.572</Modified>
+=======
+      <Modified>2019-08-17T05:32:32.583</Modified>
+>>>>>>> 1f57954d36853dbe49510baba73e90639898bd05
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\SAES\AES\AES\bin\x64\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
+<<<<<<< HEAD
       <Modified>2019-08-17T08:24:49.113</Modified>
+=======
+      <Modified>2019-08-17T06:38:49.222</Modified>
+>>>>>>> 1f57954d36853dbe49510baba73e90639898bd05
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\SAES\AES\AES\bin\x64\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
+<<<<<<< HEAD
       <Modified>2019-08-17T08:24:49.112</Modified>
+=======
+      <Modified>2019-08-17T06:38:49.221</Modified>
+>>>>>>> 1f57954d36853dbe49510baba73e90639898bd05
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.17763.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -558,7 +578,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\SAES\AES\AES\bin\x64\Debug\Core\AES.exe">
       <PackagePath>AES.exe</PackagePath>
+<<<<<<< HEAD
       <Modified>2019-08-17T08:24:50.411</Modified>
+=======
+      <Modified>2019-08-17T06:38:52.016</Modified>
+>>>>>>> 1f57954d36853dbe49510baba73e90639898bd05
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
