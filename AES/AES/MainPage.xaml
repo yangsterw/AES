@@ -46,7 +46,7 @@
         <TextBlock x:Name="FourByTwoK" HorizontalAlignment="Left" Margin="605,362,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
         <TextBlock x:Name="FourByThreeK" HorizontalAlignment="Left" Margin="652,363,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
         <TextBlock x:Name="FourByFourK" HorizontalAlignment="Left" Margin="703,362,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
-        <TextBlock x:Name="origKeyLabel" HorizontalAlignment="Left" Margin="558,191,0,0" Text="Original Key (Binary):" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <TextBlock x:Name="origKeyLabel" HorizontalAlignment="Left" Margin="542,189,0,0" Text="Original Key (Binary):" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
         <TextBlock x:Name="OneByOnePK" HorizontalAlignment="Left" Margin="558,484,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
         <TextBlock x:Name="OneByTwoPK" HorizontalAlignment="Left" Margin="602,484,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
         <TextBlock x:Name="OneByThreePK" HorizontalAlignment="Left" Margin="652,484,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
@@ -63,7 +63,7 @@
         <TextBlock x:Name="FourByTwoPK" HorizontalAlignment="Left" Margin="605,618,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
         <TextBlock x:Name="FourByThreePK" HorizontalAlignment="Left" Margin="652,619,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
         <TextBlock x:Name="FourByFourPK" HorizontalAlignment="Left" Margin="703,618,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
-        <TextBlock x:Name="permutatedKeyLabel" HorizontalAlignment="Left" Margin="558,447,0,0" Text="Permutated Key (Binary):" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <TextBlock x:Name="permutatedKeyLabel" HorizontalAlignment="Left" Margin="531,441,0,0" Text="Permutated Key (Binary):" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
         <TextBox x:Name="decryptTextInput" HorizontalAlignment="Left" FontSize="26" Margin="825,81,0,0" Text="a350" TextWrapping="Wrap" VerticalAlignment="Top" Height="41" Width="166"/>
         <Button x:Name="decodeBtn" Content="Decrypt The Encrypted Text" Margin="534,147,0,0" VerticalAlignment="Top" Width="361" Click="DecodeBtn_Click" />
         <TextBlock x:Name="decryptLabel" HorizontalAlignment="Left" Margin="825,57,0,0" Text="Input 128bit AES encrypted text to decrypt:" TextWrapping="Wrap" VerticalAlignment="Top" Height="22" Width="366"  />
@@ -73,9 +73,9 @@
         <TextBlock x:Name="decryptedResult" HorizontalAlignment="Left" Margin="237,525,0,0" Text="Empty" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="26" FontWeight="Bold"/>
         <Button x:Name="resetBtn" Content="Reset" FontSize="32" Margin="183,597,0,0" VerticalAlignment="Top" Click="ResetBtn_Click"/>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Foreground="Red" Margin="32,10,0,0" Text="Advanced Phongcryption Standard 128Bit Encryption and Decryption" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" Height="48" Width="665" FontWeight="Bold"/>
-        <Rectangle Name="PlainTextRectBox" HorizontalAlignment="Left" Height="187" Stroke="Aqua" FocusVisualPrimaryBrush="Black" Margin="80,219,0,0" VerticalAlignment="Top" Width="216" StrokeThickness="3" />
-        <Rectangle x:Name="KeyRectBox" HorizontalAlignment="Left" Height="187" Stroke="Aqua" FocusVisualPrimaryBrush="Black" Margin="546,223,0,0" VerticalAlignment="Top" Width="216" StrokeThickness="3" />
-        <Rectangle x:Name="PermRectBox" HorizontalAlignment="Left" Height="187" Stroke="Aqua" FocusVisualPrimaryBrush="Black" Margin="534,484,0,0" VerticalAlignment="Top" Width="216" StrokeThickness="3" />
+        <Rectangle Name="PlainTextRectBox" HorizontalAlignment="Left" Height="187" Stroke="Aqua" FocusVisualPrimaryBrush="Black" Margin="78,219,0,0" VerticalAlignment="Top" Width="216" StrokeThickness="3" />
+        <Rectangle x:Name="KeyRectBox" HorizontalAlignment="Left" Height="182" Stroke="Aqua" FocusVisualPrimaryBrush="Black" Margin="540,223,0,0" VerticalAlignment="Top" Width="216" StrokeThickness="3" />
+        <Rectangle x:Name="PermRectBox" HorizontalAlignment="Left" Height="187" Stroke="Aqua" FocusVisualPrimaryBrush="Black" Margin="534,478,0,0" VerticalAlignment="Top" Width="216" StrokeThickness="3" />
         <TextBlock x:Name="xorLabel" HorizontalAlignment="Left" Margin="388,270,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="64"/>
 
     </Grid>
