@@ -26,7 +26,7 @@ namespace AES.AesLib
         }
 
         /* Step 2: Permutation */
-        string PermutateKeyOnDecryption(string keyString)
+        public static string PermutateKeyOnDecryption(string keyString)
         {
             List<int> originalKey = new List<int>();
             foreach (var x in keyString)

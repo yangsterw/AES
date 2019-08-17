@@ -9,9 +9,9 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <TextBox x:Name="plainTextInput" HorizontalAlignment="Left" Margin="19,53,0,0" Text="4a9b" TextWrapping="Wrap" VerticalAlignment="Top" Height="41" Width="366"/>
+        <TextBox x:Name="plainTextInput" FontSize="26" HorizontalAlignment="Left" Margin="19,53,0,0" Text="4a9b" TextWrapping="Wrap" VerticalAlignment="Top" Height="41" Width="138"/>
         <TextBlock x:Name="inputLabel" HorizontalAlignment="Left" Margin="19,29,0,0" Text="Input hex up to FFFF to be converted to 128bit AES" TextWrapping="Wrap" VerticalAlignment="Top" Height="22" Width="366" />
-        <Button x:Name="encodeBtn" Content="Populate Matrixes In Binary Format" Margin="207,100,0,0" VerticalAlignment="Top" Width="361" Click="EncodeBtn_Click"/>
+        <Button x:Name="encodeBtn" Content="Encrypt and Populate Matrixes In Binary Format" Margin="86,119,0,0" VerticalAlignment="Top" Width="361" Click="EncodeBtn_Click"/>
         <TextBlock x:Name="OneByOne" HorizontalAlignment="Left" Margin="86,200,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
         <TextBlock x:Name="OneByTwo" HorizontalAlignment="Left" Margin="130,200,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
         <TextBlock x:Name="OneByThree" HorizontalAlignment="Left" Margin="180,200,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
@@ -28,7 +28,7 @@
         <TextBlock x:Name="FourByTwo" HorizontalAlignment="Left" Margin="133,334,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
         <TextBlock x:Name="FourByThree" HorizontalAlignment="Left" Margin="180,335,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
         <TextBlock x:Name="FourByFour" HorizontalAlignment="Left" Margin="231,334,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
-        <TextBox x:Name="keyTextInput" HorizontalAlignment="Left" Margin="435,53,0,0" Text="abab" TextWrapping="Wrap" VerticalAlignment="Top" Height="41" Width="366"/>
+        <TextBox x:Name="keyTextInput" HorizontalAlignment="Left" FontSize="26" Margin="435,53,0,0" Text="abab" TextWrapping="Wrap" VerticalAlignment="Top" Height="41" Width="166"/>
         <TextBlock x:Name="keyLabel" HorizontalAlignment="Left" Margin="435,29,0,0" Text="Input hex up to FFFF to be converted to 128bit AES KEY" TextWrapping="Wrap" VerticalAlignment="Top" Height="22" Width="366"  />
         <TextBlock x:Name="OneByOneK" HorizontalAlignment="Left" Margin="545,200,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
         <TextBlock x:Name="OneByTwoK" HorizontalAlignment="Left" Margin="589,200,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
@@ -64,6 +64,11 @@
         <TextBlock x:Name="FourByThreePK" HorizontalAlignment="Left" Margin="639,591,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
         <TextBlock x:Name="FourByFourPK" HorizontalAlignment="Left" Margin="690,590,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
         <TextBlock x:Name="permutatedKeyLabel" HorizontalAlignment="Left" Margin="545,419,0,0" Text="Permutated Key (Binary):" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <TextBox x:Name="decryptTextInput" HorizontalAlignment="Left" FontSize="26" Margin="812,53,0,0" Text="a355" TextWrapping="Wrap" VerticalAlignment="Top" Height="41" Width="166"/>
+        <Button x:Name="decodeBtn" Content="Decrypt The Encrypted Text" Margin="521,119,0,0" VerticalAlignment="Top" Width="361" Click="DecodeBtn_Click" />
+        <TextBlock x:Name="decryptLabel" HorizontalAlignment="Left" Margin="812,29,0,0" Text="Input 128bit AES encrypted text to decrypt:" TextWrapping="Wrap" VerticalAlignment="Top" Height="22" Width="366"  />
+        <TextBlock x:Name="encryptedResultLabel" HorizontalAlignment="Left" Margin="73,508,0,0" Text="CipherText:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="26" FontWeight="Bold"/>
+        <TextBlock x:Name="encryptedResult" HorizontalAlignment="Left" Margin="231,508,0,0" Text="Encrypted Result" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="26" FontWeight="Bold"/>
 
     </Grid>
 </Page>
