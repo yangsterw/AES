@@ -133,8 +133,6 @@ namespace AES
             currPlainNumbers = StringToMatrix(newStr);
         }
 
-
-
         private void XorTables()
         {
             var currTextPos = 0;
