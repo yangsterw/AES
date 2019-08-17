@@ -51,11 +51,11 @@ namespace AES.AesLib
         }
 
         /* Step 4: Substitute bytes, shift-1-right */
-        string ShiftOneRightOnEncryption(string inputString)
+        public static string ShiftOneRightOnEncryption(string inputString)
         {
             List<int> step3XorResult = new List<int>();
             foreach (var x in inputString)
-                step3XorResult.Add(inputString[x]);
+                step3XorResult.Add(x-48);
 
             List<int> step4SubsResult = lib.ShiftOneRight(step3XorResult);
             return BuildString(step4SubsResult);
@@ -98,7 +98,7 @@ namespace AES.AesLib
             return BuildString(step7XorResult);
         }          
 
-        string BuildString(List<int> inputList)
+        public static string BuildString(List<int> inputList)
         {
             StringBuilder builder = new StringBuilder();
             foreach (var x in inputList)

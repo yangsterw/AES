@@ -9,7 +9,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <TextBox x:Name="plainTextInput" HorizontalAlignment="Left" Margin="19,53,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="41" Width="366"/>
+        <TextBox x:Name="plainTextInput" HorizontalAlignment="Left" Margin="19,53,0,0" Text="4a9b" TextWrapping="Wrap" VerticalAlignment="Top" Height="41" Width="366"/>
         <TextBlock x:Name="inputLabel" HorizontalAlignment="Left" Margin="19,29,0,0" Text="Input hex up to FFFF to be converted to 128bit AES" TextWrapping="Wrap" VerticalAlignment="Top" Height="22" Width="366" />
         <Button x:Name="encodeBtn" Content="Populate Matrixes In Binary Format" Margin="207,100,0,0" VerticalAlignment="Top" Width="361" Click="EncodeBtn_Click"/>
         <TextBlock x:Name="OneByOne" HorizontalAlignment="Left" Margin="96,155,0,0" Text="1" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
@@ -28,7 +28,7 @@
         <TextBlock x:Name="FourByTwo" HorizontalAlignment="Left" Margin="143,289,0,0" Text="1" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
         <TextBlock x:Name="FourByThree" HorizontalAlignment="Left" Margin="190,290,0,0" Text="1" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
         <TextBlock x:Name="FourByFour" HorizontalAlignment="Left" Margin="241,289,0,0" Text="1" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
-        <TextBox x:Name="keyTextInput" HorizontalAlignment="Left" Margin="435,53,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="41" Width="366"/>
+        <TextBox x:Name="keyTextInput" HorizontalAlignment="Left" Margin="435,53,0,0" Text="abab" TextWrapping="Wrap" VerticalAlignment="Top" Height="41" Width="366"/>
         <TextBlock x:Name="keyLabel" HorizontalAlignment="Left" Margin="435,29,0,0" Text="Input hex up to FFFF to be converted to 128bit AES KEY" TextWrapping="Wrap" VerticalAlignment="Top" Height="22" Width="366"  />
         <TextBlock x:Name="OneByOneK" HorizontalAlignment="Left" Margin="553,155,0,0" Text="1" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
         <TextBlock x:Name="OneByTwoK" HorizontalAlignment="Left" Margin="597,155,0,0" Text="1" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>

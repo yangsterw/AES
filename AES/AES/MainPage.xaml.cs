@@ -75,8 +75,8 @@ namespace AES
 
         private void ShiftLettersOneOver()
         {
-            var newStr = MatrixToString(currPlainNumbers);
-
+            var newStr = Encryption.ShiftOneRightOnEncryption(MatrixToString(currPlainNumbers));
+            currPlainNumbers = StringToMatrix(newStr);
         }
 
 
@@ -102,7 +102,7 @@ namespace AES
             {
                 for (var col = 0; col < 4; col++)
                 {
-                    convertedMatrix[row, col] = inputString[currTextPos];
+                    convertedMatrix[row, col] = inputString[currTextPos] - 48;
                     currTextPos++;
                 }
             }
@@ -112,10 +112,10 @@ namespace AES
 
         private string MatrixToString(int[,] matrix)
         {
-            return string.Join(",", matrix.OfType<int>()
+            return string.Join("", matrix.OfType<int>()
                 .Select((value, index) => new {value, index})
                 .GroupBy(x => x.index / matrix.GetLength(1))
-                .Select(x => $"{{{string.Join(",", x.Select(y => y.value))}}}"));
+                .Select(x => $"{string.Join("", x.Select(y => y.value))}"));
         }
 
         private string Binary2Hex(string binary)
