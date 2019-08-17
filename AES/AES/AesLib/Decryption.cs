@@ -37,7 +37,7 @@ namespace AES.AesLib
         }
 
         /* Step 3: XOR the original message with the key */
-        string XorEvaluationOnDecryption(string inputString, string keyString)
+        public static string XorEvaluationOnDecryption(string inputString, string keyString)
         {
             List<int> originalMsg = new List<int>();
             foreach (var x in inputString)
@@ -52,7 +52,7 @@ namespace AES.AesLib
         }
 
         /* Step 4: Mix column vertically upward */        
-        string MixColumnVerticallyUpwardOnDecryption(string inputString)
+        public static string MixColumnVerticallyUpwardOnDecryption(string inputString)
         {
             List<int> step3XorResult = new List<int>();
             foreach (var x in inputString)
@@ -63,7 +63,7 @@ namespace AES.AesLib
         }
 
         /* Step 5: Shift rows */        
-        string ShiftingRowsOnDecryption(string inputString)
+        public static string ShiftingRowsOnDecryption(string inputString)
         {
             List<int> step4SubsResult = new List<int>();
             foreach (var x in inputString)
@@ -74,7 +74,7 @@ namespace AES.AesLib
         }
 
         /* Step 6: Shifting left 1 bit */        
-        string ShiftingLeftOneBitOnDecryption(string inputString)
+        public static string ShiftingLeftOneBitOnDecryption(string inputString)
         {
             List<int> step5ShiftResult = new List<int>();
             foreach (var x in inputString)
@@ -85,8 +85,8 @@ namespace AES.AesLib
         }
 
         /* Step 7: XOR Step6Result with Original key */
-        List<int> step7XorResult = new List<int>();
-        string XorStepSixWithOriginalKeyOnDecryption(string inputString, string keyString)
+        public static List<int> step7XorResult = new List<int>();
+        public static string XorStepSixWithOriginalKeyOnDecryption(string inputString, string keyString)
         {
             List<int> step6ShiftResult = new List<int>();
             foreach (var x in inputString)
@@ -109,7 +109,7 @@ namespace AES.AesLib
             return builder.ToString();
         }
 
-        string BuildString(List<int> inputList)
+        public static string BuildString(List<int> inputList)
         {
             StringBuilder builder = new StringBuilder();
             foreach (var x in inputList)

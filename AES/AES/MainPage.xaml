@@ -69,6 +69,8 @@
         <TextBlock x:Name="decryptLabel" HorizontalAlignment="Left" Margin="812,29,0,0" Text="Input 128bit AES encrypted text to decrypt:" TextWrapping="Wrap" VerticalAlignment="Top" Height="22" Width="366"  />
         <TextBlock x:Name="encryptedResultLabel" HorizontalAlignment="Left" Margin="73,508,0,0" Text="CipherText:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="26" FontWeight="Bold"/>
         <TextBlock x:Name="encryptedResult" HorizontalAlignment="Left" Margin="231,508,0,0" Text="Encrypted Result" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="26" FontWeight="Bold"/>
+        <TextBlock x:Name="decryptedResultLabel" HorizontalAlignment="Left" Margin="19,562,0,0" Text="Decrypted Text:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="26" FontWeight="Bold"/>
+        <TextBlock x:Name="decryptedResult" HorizontalAlignment="Left" Margin="230,563,0,0" Text="Decrypted Result" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="26" FontWeight="Bold"/>
 
     </Grid>
 </Page>
