@@ -30,13 +30,21 @@
     <AppXManifest Include="F:\SAES\AES\AES\bin\x64\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+<<<<<<< HEAD
       <Modified>2019-08-17T04:35:08.590</Modified>
+=======
+      <Modified>2019-08-17T05:14:53.572</Modified>
+>>>>>>> 42de1be0bcd4cc3183c065e201f9816c1404e8a2
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="F:\SAES\AES\AES\bin\x64\Debug\AES.exe">
       <PackagePath>entrypoint\AES.exe</PackagePath>
+<<<<<<< HEAD
       <Modified>2019-08-17T04:35:07.078</Modified>
+=======
+      <Modified>2019-08-17T05:14:52.712</Modified>
+>>>>>>> 42de1be0bcd4cc3183c065e201f9816c1404e8a2
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Yenny Wright\.nuget\packages\microsoft.csharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -542,11 +550,19 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\SAES\AES\AES\bin\x64\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
+<<<<<<< HEAD
       <Modified>2019-08-17T04:35:06.639</Modified>
+=======
+      <Modified>2019-08-17T05:14:52.250</Modified>
+>>>>>>> 42de1be0bcd4cc3183c065e201f9816c1404e8a2
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\SAES\AES\AES\bin\x64\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
+<<<<<<< HEAD
       <Modified>2019-08-17T04:35:06.639</Modified>
+=======
+      <Modified>2019-08-17T05:14:52.250</Modified>
+>>>>>>> 42de1be0bcd4cc3183c065e201f9816c1404e8a2
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.17763.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -558,7 +574,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\SAES\AES\AES\bin\x64\Debug\Core\AES.exe">
       <PackagePath>AES.exe</PackagePath>
+<<<<<<< HEAD
       <Modified>2019-08-17T04:35:08.547</Modified>
+=======
+      <Modified>2019-08-17T05:14:53.545</Modified>
+>>>>>>> 42de1be0bcd4cc3183c065e201f9816c1404e8a2
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

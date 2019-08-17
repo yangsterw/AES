@@ -95,6 +95,7 @@ namespace AES
                     encodeBtn.Content = "Finished Encrypting";
                     encodeBtn.IsEnabled = false;
                     decodeBtn.IsEnabled = true;
+                    decodeBtn.Content = "Decrypt The Encrypted Text";
                     break;
             }
         }
@@ -304,18 +305,80 @@ namespace AES
 
         private void DecodeBtn_Click(object sender, RoutedEventArgs e)
         {
-            var currTextPos = 0;
-            decodeBtn.IsEnabled = false;
+            encodeBtn.IsEnabled = false;
+
             switch (currStep)
             {
                 case 0:
                     StartDecrypt();
+                    currStep++;
+                    decodeBtn.Content = "XOR Permutated Key With Text";
                     break;
                 case 1:
+                    XorDecodeTable();
+                    AlignPlainLetters();
+                    currStep++;
+                    decodeBtn.Content = "Now Re-Mix (Shift Up)";
                     break;
                 case 2:
+                    MixColumnUp();
+                    AlignPlainLetters();
+                    currStep++;
+                    decodeBtn.Content = "Shift rows right";
+                    break;
+                case 3:
+                    ShiftRowsDecode();
+                    AlignPlainLetters();
+                    currStep++;
+                    decodeBtn.Content = "Substitute Bytes (Shift 1 left)";
+                    break;
+                case 4:
+                    DecodeSubstituteBytes();
+                    AlignPlainLetters();
+                    currStep++;
+                    decodeBtn.Content = "XOR with Original Key";
+                    break;
+                case 5:
+                    DecodeXorWithOrigKey();
+                    currStep = 0;
+                    AlignPlainLetters();
+                    decryptedResult.Text = Binary2Hex(MatrixToString(currPlainNumbers));
+                    decodeBtn.Content = "Finished Decoding";
+                    decodeBtn.IsEnabled = false;
+                    encodeBtn.IsEnabled = true;
+                    encodeBtn.Content = "Encrypt and Populate Matrixes In Binary Format";
                     break;
             }
+        }
+
+        private void DecodeXorWithOrigKey()
+        {
+            var result = Decryption.XorStepSixWithOriginalKeyOnDecryption(MatrixToString(currPlainNumbers), keyBinNums);
+            currPlainNumbers = StringToMatrix(result);
+        }
+
+        private void DecodeSubstituteBytes()
+        {
+            var result = Decryption.ShiftingLeftOneBitOnDecryption(MatrixToString(currPlainNumbers));
+            currPlainNumbers = StringToMatrix(result);
+        }
+
+        private void ShiftRowsDecode()
+        {
+            var test = Decryption.ShiftingRowsOnDecryption(MatrixToString(currPlainNumbers));
+            currPlainNumbers = StringToMatrix(test);
+
+        }
+
+        private void MixColumnUp()
+        {
+            var result = Decryption.MixColumnVerticallyUpwardOnDecryption(MatrixToString(currPlainNumbers));
+            currPlainNumbers = StringToMatrix(result);
+        }
+        private void XorDecodeTable()
+        {
+            var resultString = Decryption.XorEvaluationOnDecryption(plainBinNums, permutatedBinNums);
+            currPlainNumbers = StringToMatrix(resultString);
         }
 
         private void StartDecrypt()
@@ -323,6 +386,15 @@ namespace AES
             plainBinNums = Hex2Binary(decryptTextInput.Text);
             keyBinNums = Hex2Binary(keyTextInput.Text);
             permutatedBinNums = Decryption.PermutateKeyOnDecryption(keyBinNums);
+
+            currPlainNumbers = StringToMatrix(plainBinNums);
+            AlignPlainLetters();
+
+            currKeyNumbers = StringToMatrix(keyBinNums);
+            AlignKeyLetters();
+
+            currPermutatedKeyNums = StringToMatrix(permutatedBinNums);
+            AlignPermLetters();
         }
     }
 }
