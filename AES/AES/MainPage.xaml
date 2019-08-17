@@ -9,69 +9,71 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <TextBox x:Name="plainTextInput" FontSize="26" HorizontalAlignment="Left" Margin="19,53,0,0" Text="4a9b" TextWrapping="Wrap" VerticalAlignment="Top" Height="41" Width="138"/>
-        <TextBlock x:Name="inputLabel" HorizontalAlignment="Left" Margin="19,29,0,0" Text="Input hex up to FFFF to be converted to 128bit AES" TextWrapping="Wrap" VerticalAlignment="Top" Height="22" Width="366" />
-        <Button x:Name="encodeBtn" Content="Encrypt and Populate Matrixes In Binary Format" Margin="86,119,0,0" VerticalAlignment="Top" Width="361" Click="EncodeBtn_Click"/>
-        <TextBlock x:Name="OneByOne" HorizontalAlignment="Left" Margin="86,200,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
-        <TextBlock x:Name="OneByTwo" HorizontalAlignment="Left" Margin="130,200,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
-        <TextBlock x:Name="OneByThree" HorizontalAlignment="Left" Margin="180,200,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
-        <TextBlock x:Name="OneByFour" HorizontalAlignment="Left" Margin="230,200,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
-        <TextBlock x:Name="TwoByOne" HorizontalAlignment="Left" Margin="86,243,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
-        <TextBlock x:Name="TwoByTwo" HorizontalAlignment="Left" Margin="133,243,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
-        <TextBlock x:Name="TwoByThree" HorizontalAlignment="Left" Margin="183,243,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
-        <TextBlock x:Name="TwoByFour" HorizontalAlignment="Left" Margin="231,243,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
-        <TextBlock x:Name="ThreeByOne" HorizontalAlignment="Left" Margin="86,291,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
-        <TextBlock x:Name="ThreeByTwo" HorizontalAlignment="Left" Margin="133,291,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
-        <TextBlock x:Name="ThreeByThree" HorizontalAlignment="Left" Margin="183,291,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
-        <TextBlock x:Name="ThreeByFour" HorizontalAlignment="Left" Margin="231,291,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
-        <TextBlock x:Name="FourByOne" HorizontalAlignment="Left" Margin="86,334,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
-        <TextBlock x:Name="FourByTwo" HorizontalAlignment="Left" Margin="133,334,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
-        <TextBlock x:Name="FourByThree" HorizontalAlignment="Left" Margin="180,335,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
-        <TextBlock x:Name="FourByFour" HorizontalAlignment="Left" Margin="231,334,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
-        <TextBox x:Name="keyTextInput" HorizontalAlignment="Left" FontSize="26" Margin="435,53,0,0" Text="abab" TextWrapping="Wrap" VerticalAlignment="Top" Height="41" Width="166"/>
-        <TextBlock x:Name="keyLabel" HorizontalAlignment="Left" Margin="435,29,0,0" Text="Input hex up to FFFF to be converted to 128bit AES KEY" TextWrapping="Wrap" VerticalAlignment="Top" Height="22" Width="366"  />
-        <TextBlock x:Name="OneByOneK" HorizontalAlignment="Left" Margin="545,200,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
-        <TextBlock x:Name="OneByTwoK" HorizontalAlignment="Left" Margin="589,200,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
-        <TextBlock x:Name="OneByThreeK" HorizontalAlignment="Left" Margin="639,200,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
-        <TextBlock x:Name="OneByFourK" HorizontalAlignment="Left" Margin="689,200,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
-        <TextBlock x:Name="TwoByOneK" HorizontalAlignment="Left" Margin="545,243,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
-        <TextBlock x:Name="TwoByTwoK" HorizontalAlignment="Left" Margin="592,243,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
-        <TextBlock x:Name="TwoByThreeK" HorizontalAlignment="Left" Margin="642,243,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
-        <TextBlock x:Name="TwoByFourK" HorizontalAlignment="Left" Margin="690,243,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
-        <TextBlock x:Name="ThreeByOneK" HorizontalAlignment="Left" Margin="545,291,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
-        <TextBlock x:Name="ThreeByTwoK" HorizontalAlignment="Left" Margin="592,291,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
-        <TextBlock x:Name="ThreeByThreeK" HorizontalAlignment="Left" Margin="642,291,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
-        <TextBlock x:Name="ThreeByFourK" HorizontalAlignment="Left" Margin="690,291,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
-        <TextBlock x:Name="FourByOneK" HorizontalAlignment="Left" Margin="545,334,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
-        <TextBlock x:Name="FourByTwoK" HorizontalAlignment="Left" Margin="592,334,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
-        <TextBlock x:Name="FourByThreeK" HorizontalAlignment="Left" Margin="639,335,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
-        <TextBlock x:Name="FourByFourK" HorizontalAlignment="Left" Margin="690,334,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
-        <TextBlock x:Name="origKeyLabel" HorizontalAlignment="Left" Margin="545,163,0,0" Text="Original Key (Binary):" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
-        <TextBlock x:Name="OneByOnePK" HorizontalAlignment="Left" Margin="545,456,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
-        <TextBlock x:Name="OneByTwoPK" HorizontalAlignment="Left" Margin="589,456,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
-        <TextBlock x:Name="OneByThreePK" HorizontalAlignment="Left" Margin="639,456,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
-        <TextBlock x:Name="OneByFourPK" HorizontalAlignment="Left" Margin="689,456,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
-        <TextBlock x:Name="TwoByOnePK" HorizontalAlignment="Left" Margin="545,499,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
-        <TextBlock x:Name="TwoByTwoPK" HorizontalAlignment="Left" Margin="592,499,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
-        <TextBlock x:Name="TwoByThreePK" HorizontalAlignment="Left" Margin="642,499,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
-        <TextBlock x:Name="TwoByFourPK" HorizontalAlignment="Left" Margin="690,499,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
-        <TextBlock x:Name="ThreeByOnePK" HorizontalAlignment="Left" Margin="545,547,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
-        <TextBlock x:Name="ThreeByTwoPK" HorizontalAlignment="Left" Margin="592,547,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
-        <TextBlock x:Name="ThreeByThreePK" HorizontalAlignment="Left" Margin="642,547,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
-        <TextBlock x:Name="ThreeByFourPK" HorizontalAlignment="Left" Margin="690,547,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
-        <TextBlock x:Name="FourByOnePK" HorizontalAlignment="Left" Margin="545,590,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
-        <TextBlock x:Name="FourByTwoPK" HorizontalAlignment="Left" Margin="592,590,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
-        <TextBlock x:Name="FourByThreePK" HorizontalAlignment="Left" Margin="639,591,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
-        <TextBlock x:Name="FourByFourPK" HorizontalAlignment="Left" Margin="690,590,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
-        <TextBlock x:Name="permutatedKeyLabel" HorizontalAlignment="Left" Margin="545,419,0,0" Text="Permutated Key (Binary):" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
-        <TextBox x:Name="decryptTextInput" HorizontalAlignment="Left" FontSize="26" Margin="812,53,0,0" Text="a355" TextWrapping="Wrap" VerticalAlignment="Top" Height="41" Width="166"/>
-        <Button x:Name="decodeBtn" Content="Decrypt The Encrypted Text" Margin="521,119,0,0" VerticalAlignment="Top" Width="361" Click="DecodeBtn_Click" />
-        <TextBlock x:Name="decryptLabel" HorizontalAlignment="Left" Margin="812,29,0,0" Text="Input 128bit AES encrypted text to decrypt:" TextWrapping="Wrap" VerticalAlignment="Top" Height="22" Width="366"  />
-        <TextBlock x:Name="encryptedResultLabel" HorizontalAlignment="Left" Margin="67,442,0,0" Text="CipherText:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="26" FontWeight="Bold"/>
-        <TextBlock x:Name="encryptedResult" HorizontalAlignment="Left" Margin="225,442,0,0" Text="Empty" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="26" FontWeight="Bold"/>
-        <TextBlock x:Name="decryptedResultLabel" HorizontalAlignment="Left" Margin="13,496,0,0" Text="Decrypted Text:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="26" FontWeight="Bold"/>
-        <TextBlock x:Name="decryptedResult" HorizontalAlignment="Left" Margin="224,497,0,0" Text="Empty" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="26" FontWeight="Bold"/>
-        <Button x:Name="resetBtn" Content="Reset" FontSize="32" Margin="170,569,0,0" VerticalAlignment="Top" Click="ResetBtn_Click"/>
+        <TextBox x:Name="plainTextInput" FontSize="26" HorizontalAlignment="Left" Margin="32,81,0,0" Text="4a9b" TextWrapping="Wrap" VerticalAlignment="Top" Height="41" Width="138"/>
+        <TextBlock x:Name="inputLabel" HorizontalAlignment="Left" Margin="32,57,0,0" Text="Input hex up to FFFF to be converted to 128bit AES" TextWrapping="Wrap" VerticalAlignment="Top" Height="22" Width="366" />
+        <Button x:Name="encodeBtn" Content="Encrypt and Populate Matrixes In Binary Format" Margin="99,147,0,0" VerticalAlignment="Top" Width="361" Click="EncodeBtn_Click"/>
+        <TextBlock x:Name="OneByOne" HorizontalAlignment="Left" Margin="99,228,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
+        <TextBlock x:Name="OneByTwo" HorizontalAlignment="Left" Margin="143,228,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
+        <TextBlock x:Name="OneByThree" HorizontalAlignment="Left" Margin="193,228,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
+        <TextBlock x:Name="OneByFour" HorizontalAlignment="Left" Margin="243,228,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
+        <TextBlock x:Name="TwoByOne" HorizontalAlignment="Left" Margin="99,271,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
+        <TextBlock x:Name="TwoByTwo" HorizontalAlignment="Left" Margin="146,271,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
+        <TextBlock x:Name="TwoByThree" HorizontalAlignment="Left" Margin="196,271,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
+        <TextBlock x:Name="TwoByFour" HorizontalAlignment="Left" Margin="244,271,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
+        <TextBlock x:Name="ThreeByOne" HorizontalAlignment="Left" Margin="99,319,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
+        <TextBlock x:Name="ThreeByTwo" HorizontalAlignment="Left" Margin="146,319,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
+        <TextBlock x:Name="ThreeByThree" HorizontalAlignment="Left" Margin="196,319,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
+        <TextBlock x:Name="ThreeByFour" HorizontalAlignment="Left" Margin="244,319,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
+        <TextBlock x:Name="FourByOne" HorizontalAlignment="Left" Margin="99,362,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
+        <TextBlock x:Name="FourByTwo" HorizontalAlignment="Left" Margin="146,362,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
+        <TextBlock x:Name="FourByThree" HorizontalAlignment="Left" Margin="193,363,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
+        <TextBlock x:Name="FourByFour" HorizontalAlignment="Left" Margin="244,362,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
+        <TextBox x:Name="keyTextInput" HorizontalAlignment="Left" FontSize="26" Margin="448,81,0,0" Text="abab" TextWrapping="Wrap" VerticalAlignment="Top" Height="41" Width="166"/>
+        <TextBlock x:Name="keyLabel" HorizontalAlignment="Left" Margin="448,57,0,0" Text="Input hex up to FFFF to be converted to 128bit AES KEY" TextWrapping="Wrap" VerticalAlignment="Top" Height="22" Width="366"  />
+        <TextBlock x:Name="OneByOneK" HorizontalAlignment="Left" Margin="558,228,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
+        <TextBlock x:Name="OneByTwoK" HorizontalAlignment="Left" Margin="602,228,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
+        <TextBlock x:Name="OneByThreeK" HorizontalAlignment="Left" Margin="652,228,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
+        <TextBlock x:Name="OneByFourK" HorizontalAlignment="Left" Margin="702,228,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
+        <TextBlock x:Name="TwoByOneK" HorizontalAlignment="Left" Margin="558,271,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
+        <TextBlock x:Name="TwoByTwoK" HorizontalAlignment="Left" Margin="605,271,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
+        <TextBlock x:Name="TwoByThreeK" HorizontalAlignment="Left" Margin="655,271,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
+        <TextBlock x:Name="TwoByFourK" HorizontalAlignment="Left" Margin="703,271,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
+        <TextBlock x:Name="ThreeByOneK" HorizontalAlignment="Left" Margin="558,319,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
+        <TextBlock x:Name="ThreeByTwoK" HorizontalAlignment="Left" Margin="605,319,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
+        <TextBlock x:Name="ThreeByThreeK" HorizontalAlignment="Left" Margin="655,319,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
+        <TextBlock x:Name="ThreeByFourK" HorizontalAlignment="Left" Margin="703,319,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
+        <TextBlock x:Name="FourByOneK" HorizontalAlignment="Left" Margin="558,362,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
+        <TextBlock x:Name="FourByTwoK" HorizontalAlignment="Left" Margin="605,362,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
+        <TextBlock x:Name="FourByThreeK" HorizontalAlignment="Left" Margin="652,363,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
+        <TextBlock x:Name="FourByFourK" HorizontalAlignment="Left" Margin="703,362,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
+        <TextBlock x:Name="origKeyLabel" HorizontalAlignment="Left" Margin="558,191,0,0" Text="Original Key (Binary):" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <TextBlock x:Name="OneByOnePK" HorizontalAlignment="Left" Margin="558,484,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
+        <TextBlock x:Name="OneByTwoPK" HorizontalAlignment="Left" Margin="602,484,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
+        <TextBlock x:Name="OneByThreePK" HorizontalAlignment="Left" Margin="652,484,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
+        <TextBlock x:Name="OneByFourPK" HorizontalAlignment="Left" Margin="702,484,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
+        <TextBlock x:Name="TwoByOnePK" HorizontalAlignment="Left" Margin="558,527,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
+        <TextBlock x:Name="TwoByTwoPK" HorizontalAlignment="Left" Margin="605,527,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
+        <TextBlock x:Name="TwoByThreePK" HorizontalAlignment="Left" Margin="655,527,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
+        <TextBlock x:Name="TwoByFourPK" HorizontalAlignment="Left" Margin="703,527,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
+        <TextBlock x:Name="ThreeByOnePK" HorizontalAlignment="Left" Margin="558,575,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
+        <TextBlock x:Name="ThreeByTwoPK" HorizontalAlignment="Left" Margin="605,575,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
+        <TextBlock x:Name="ThreeByThreePK" HorizontalAlignment="Left" Margin="655,575,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
+        <TextBlock x:Name="ThreeByFourPK" HorizontalAlignment="Left" Margin="703,575,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
+        <TextBlock x:Name="FourByOnePK" HorizontalAlignment="Left" Margin="558,618,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
+        <TextBlock x:Name="FourByTwoPK" HorizontalAlignment="Left" Margin="605,618,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
+        <TextBlock x:Name="FourByThreePK" HorizontalAlignment="Left" Margin="652,619,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
+        <TextBlock x:Name="FourByFourPK" HorizontalAlignment="Left" Margin="703,618,0,0" Text="X" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
+        <TextBlock x:Name="permutatedKeyLabel" HorizontalAlignment="Left" Margin="558,447,0,0" Text="Permutated Key (Binary):" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <TextBox x:Name="decryptTextInput" HorizontalAlignment="Left" FontSize="26" Margin="825,81,0,0" Text="a350" TextWrapping="Wrap" VerticalAlignment="Top" Height="41" Width="166"/>
+        <Button x:Name="decodeBtn" Content="Decrypt The Encrypted Text" Margin="534,147,0,0" VerticalAlignment="Top" Width="361" Click="DecodeBtn_Click" />
+        <TextBlock x:Name="decryptLabel" HorizontalAlignment="Left" Margin="825,57,0,0" Text="Input 128bit AES encrypted text to decrypt:" TextWrapping="Wrap" VerticalAlignment="Top" Height="22" Width="366"  />
+        <TextBlock x:Name="encryptedResultLabel" HorizontalAlignment="Left" Margin="80,470,0,0" Text="CipherText:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="26" FontWeight="Bold"/>
+        <TextBlock x:Name="encryptedResult" HorizontalAlignment="Left" Margin="238,470,0,0" Text="Empty" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="26" FontWeight="Bold"/>
+        <TextBlock x:Name="decryptedResultLabel" HorizontalAlignment="Left" Margin="26,524,0,0" Text="Decrypted Text:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="26" FontWeight="Bold"/>
+        <TextBlock x:Name="decryptedResult" HorizontalAlignment="Left" Margin="237,525,0,0" Text="Empty" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="26" FontWeight="Bold"/>
+        <Button x:Name="resetBtn" Content="Reset" FontSize="32" Margin="183,597,0,0" VerticalAlignment="Top" Click="ResetBtn_Click"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Foreground="Red" Margin="32,10,0,0" Text="Advanced Phongcryption Standard 128Bit Encryption and Decryption" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" Height="48" Width="665" FontWeight="Bold"/>
+        <Rectangle Name="PlainTextRectBox" HorizontalAlignment="Left" Height="187" Stroke="Aqua" FocusVisualPrimaryBrush="Black" Margin="80,219,0,0" VerticalAlignment="Top" Width="216" StrokeThickness="3" />
 
     </Grid>
 </Page>

@@ -358,13 +358,13 @@ namespace AES.AesLib
             for (int i = 0; i < inputList.Count; i++)
             {
                 if (i == 0)
-                    output.Add(inputList[1]);
-                if (i == 1)
-                    output.Add(inputList[2]);
-                if (i == 2)
                     output.Add(inputList[3]);
-                if (i == 3)
+                if (i == 1)
                     output.Add(inputList[0]);
+                if (i == 2)
+                    output.Add(inputList[1]);
+                if (i == 3)
+                    output.Add(inputList[2]);
             }
             return output;
         }
@@ -503,9 +503,13 @@ namespace AES.AesLib
             for (int i = 0; i < inputList.Count; i++)
             {
                 if (i == 0)
+                    output.Add(inputList[1]);
+                if (i == 1)
+                    output.Add(inputList[2]);
+                if (i == 2)
                     output.Add(inputList[3]);
-                else
-                    output.Add(inputList[i - 1]);
+                if (i == 3)
+                    output.Add(inputList[0]);
             }
             return output;
         }
@@ -546,10 +550,14 @@ namespace AES.AesLib
             List<int> output = new List<int>();
             for (int i = 0; i < inputList.Count; i++)
             {
-                if (i == 3)
+                if (i == 0)
+                    output.Add(inputList[3]);
+                if (i == 1)
                     output.Add(inputList[0]);
-                else
-                    output.Add(inputList[i + 1]);
+                if (i == 2)
+                    output.Add(inputList[1]);
+                if (i == 3)
+                    output.Add(inputList[2]);
             }
             return output;
         }
