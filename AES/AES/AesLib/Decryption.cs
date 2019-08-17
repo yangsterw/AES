@@ -109,7 +109,7 @@ namespace AES.AesLib
             return builder.ToString();
         }
 
-        string BuildString(List<int> inputList)
+        public static string BuildString(List<int> inputList)
         {
             StringBuilder builder = new StringBuilder();
             foreach (var x in inputList)
