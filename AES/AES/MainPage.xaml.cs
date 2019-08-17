@@ -31,6 +31,7 @@ namespace AES
         private int[,] currXorNums = new int[4, 4];
         private string plainBinNums;
         private string keyBinNums;
+        private string permutatedBinNums;
         public MainPage()
         {
             this.InitializeComponent();
@@ -40,7 +41,7 @@ namespace AES
         private void EncodeBtn_Click(object sender, RoutedEventArgs e)
         {
             var currTextPos = 0;
-
+            decodeBtn.IsEnabled = false;
             switch (currStep)
             {
                 case 0:
@@ -90,7 +91,10 @@ namespace AES
                 case 6:
                     XorWithPermutatedKey();
                     AlignPlainLetters();
-                    currStep++;
+                    currStep = 0;
+                    encodeBtn.Content = "Finished Encrypting";
+                    encodeBtn.IsEnabled = false;
+                    decodeBtn.IsEnabled = true;
                     break;
             }
         }
@@ -100,6 +104,8 @@ namespace AES
             var xoredPlainTxt = Encryption.XorEvaluationOnEncryption(MatrixToString(currPlainNumbers),
                 MatrixToString(currPermutatedKeyNums));
             currPlainNumbers = StringToMatrix(xoredPlainTxt);
+
+            encryptedResult.Text = Binary2Hex(xoredPlainTxt);
         }
 
         private void MixColumns()
@@ -162,7 +168,7 @@ namespace AES
         private string Binary2Hex(string binary)
         {
             string hexVal = "";
-            hexVal = Convert.ToString(Convert.ToInt32(binary, 16), 2);
+            hexVal = Convert.ToString(Convert.ToInt32(binary, 2), 16);
             return hexVal;
         }
         private string Hex2Binary(string hexvalue)
@@ -294,6 +300,29 @@ namespace AES
             FourByTwoK.Text = Convert.ToString(currKeyNumbers[3, 1]);
             FourByThreeK.Text = Convert.ToString(currKeyNumbers[3, 2]);
             FourByFourK.Text = Convert.ToString(currKeyNumbers[3, 3]);
+        }
+
+        private void DecodeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var currTextPos = 0;
+            decodeBtn.IsEnabled = false;
+            switch (currStep)
+            {
+                case 0:
+                    StartDecrypt();
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    break;
+            }
+        }
+
+        private void StartDecrypt()
+        {
+            plainBinNums = Hex2Binary(decryptTextInput.Text);
+            keyBinNums = Hex2Binary(keyTextInput.Text);
+            permutatedBinNums = Decryption.PermutateKeyOnDecryption(keyBinNums);
         }
     }
 }
