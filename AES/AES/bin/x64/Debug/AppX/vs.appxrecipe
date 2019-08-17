@@ -30,13 +30,13 @@
     <AppXManifest Include="F:\SAES\AES\AES\bin\x64\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-08-17T08:34:13.437</Modified>
+      <Modified>2019-08-17T14:08:13.105</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="F:\SAES\AES\AES\bin\x64\Debug\AES.exe">
       <PackagePath>entrypoint\AES.exe</PackagePath>
-      <Modified>2019-08-17T08:34:12.456</Modified>
+      <Modified>2019-08-17T14:08:07.777</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Yenny Wright\.nuget\packages\microsoft.csharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -542,11 +542,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\SAES\AES\AES\bin\x64\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2019-08-17T08:34:12.178</Modified>
+      <Modified>2019-08-17T14:08:07.459</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\SAES\AES\AES\bin\x64\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2019-08-17T08:34:12.178</Modified>
+      <Modified>2019-08-17T14:08:07.459</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.17763.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -554,11 +554,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\SAES\AES\AES\bin\x64\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2019-08-17T01:50:43.766</Modified>
+      <Modified>2019-08-17T14:08:10.409</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\SAES\AES\AES\bin\x64\Debug\Core\AES.exe">
       <PackagePath>AES.exe</PackagePath>
-      <Modified>2019-08-17T08:34:13.401</Modified>
+      <Modified>2019-08-17T14:08:13.080</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
