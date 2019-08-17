@@ -29,7 +29,7 @@ namespace AES.AesLib
         {
             List<int> originalKey = new List<int>();
             foreach (var x in inputString)
-                originalKey.Add(inputString[x]);
+                originalKey.Add(x-48);
 
             List<int> step2PermutateResult = lib.PermutationOne(originalKey);
             return BuildString(step2PermutateResult);
@@ -40,11 +40,11 @@ namespace AES.AesLib
         {
             List<int> originalMsg = new List<int>();
             foreach (var x in inputString)
-                originalMsg.Add(inputString[x]);
+                originalMsg.Add(x - 48);
 
             List<int> originalKey = new List<int>();
             foreach (var x in keyString)
-                originalKey.Add(keyString[x]);
+                originalKey.Add(x - 48);
 
             List<int> step3XorResult = lib.ExorEvaluation(originalMsg, originalKey);
             return BuildString(step3XorResult);
@@ -66,7 +66,7 @@ namespace AES.AesLib
         {
             List<int> step4SubsResult = new List<int>();
             foreach (var x in inputString)
-                step4SubsResult.Add(inputString[x]);
+                step4SubsResult.Add(x - 48);
 
             List<int> step5ShiftResult = lib.ShiftRowsSingleRound(step4SubsResult);
             return BuildString(step5ShiftResult);
@@ -77,7 +77,7 @@ namespace AES.AesLib
         {
             List<int> step5ShiftResult = new List<int>();
             foreach (var x in inputString)
-                step5ShiftResult.Add(inputString[x]);
+                step5ShiftResult.Add(x - 48);
 
             List<int> step6ShiftResult = lib.MixColumnVerticallyOneRound(step5ShiftResult);
             return BuildString(step6ShiftResult);
@@ -88,11 +88,11 @@ namespace AES.AesLib
         {
             List<int> step6ShiftResult = new List<int>();
             foreach (var x in inputString)
-                step6ShiftResult.Add(inputString[x]);
+                step6ShiftResult.Add(x - 48);
 
             List<int> step2PermutateResult = new List<int>();
             foreach (var x in keyString)
-                step2PermutateResult.Add(inputString[x]);
+                step2PermutateResult.Add(x - 48);
 
             List<int> step7XorResult = lib.ExorEvaluation(step6ShiftResult, step2PermutateResult);
             return BuildString(step7XorResult);

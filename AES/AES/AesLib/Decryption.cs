@@ -30,7 +30,7 @@ namespace AES.AesLib
         {
             List<int> originalKey = new List<int>();
             foreach (var x in keyString)
-                originalKey.Add(keyString[x]);
+                originalKey.Add(x - 48);
 
             List<int> step2PermutateResult = lib.PermutationOne(originalKey);
             return BuildString(step2PermutateResult);
@@ -41,11 +41,11 @@ namespace AES.AesLib
         {
             List<int> originalMsg = new List<int>();
             foreach (var x in inputString)
-                originalMsg.Add(inputString[x]);
+                originalMsg.Add(x - 48);
 
             List<int> step2PermutateResult = new List<int>();
             foreach (var x in keyString)
-                step2PermutateResult.Add(inputString[x]);
+                step2PermutateResult.Add(x - 48);
 
             List<int> step3XorResult = lib.ExorEvaluation(originalMsg, step2PermutateResult);
             return BuildString(step3XorResult);
@@ -56,7 +56,7 @@ namespace AES.AesLib
         {
             List<int> step3XorResult = new List<int>();
             foreach (var x in inputString)
-                step3XorResult.Add(inputString[x]);
+                step3XorResult.Add(x - 48);
 
             List<int>step4SubsResult = lib.MixColumnVerticallyUpwardOneRound(step3XorResult);
             return BuildString(step4SubsResult);
@@ -67,7 +67,7 @@ namespace AES.AesLib
         {
             List<int> step4SubsResult = new List<int>();
             foreach (var x in inputString)
-                step4SubsResult.Add(inputString[x]);
+                step4SubsResult.Add(x - 48);
 
             List<int> step5ShiftResult = lib.ShiftRowsRightSingleRound(step4SubsResult);
             return BuildString(step5ShiftResult);
@@ -78,7 +78,7 @@ namespace AES.AesLib
         {
             List<int> step5ShiftResult = new List<int>();
             foreach (var x in inputString)
-                step5ShiftResult.Add(inputString[x]);
+                step5ShiftResult.Add(x - 48);
 
             List<int> step6ShiftResult = lib.ShiftOneLeft(step5ShiftResult);
             return BuildString(step6ShiftResult);
@@ -90,11 +90,11 @@ namespace AES.AesLib
         {
             List<int> step6ShiftResult = new List<int>();
             foreach (var x in inputString)
-                step6ShiftResult.Add(inputString[x]);
+                step6ShiftResult.Add(x - 48);
 
             List<int> originalKey = new List<int>();
             foreach (var x in keyString)
-                originalKey.Add(keyString[x]);
+                originalKey.Add(x - 48);
 
             step7XorResult = lib.ExorEvaluation(step6ShiftResult, originalKey);
             return BuildString(step7XorResult);
