@@ -113,6 +113,7 @@ namespace AES
                     encodeBtn.IsEnabled = false;
                     decodeBtn.IsEnabled = true;
                     decodeBtn.Content = "Decrypt The Encrypted Text";
+                    xorLabel.Text = "";
                     break;
             }
         }
@@ -439,7 +440,7 @@ namespace AES
             KeyRectBox.Stroke = new SolidColorBrush(Colors.Aqua);
             PermRectBox.Stroke = new SolidColorBrush(Colors.Aqua);
             PlainTextRectBox.Stroke = new SolidColorBrush(Colors.Aqua);
-
+            xorLabel.Text = "";
             currStep = 0;
             encodeBtn.Content = "Encrypt and Populate Matrixes In Binary Format";
             decodeBtn.Content = "Decrypt The Encrypted Text";
